@@ -16,7 +16,7 @@ def init_db():
     conn.commit()
     conn.close()
 
-@app.route('/tasks', methods=['GET'])
+@app.route('/api/tasks', methods=['GET'])
 def get_tasks():
     conn = sqlite3.connect('tasks.db')
     c = conn.cursor()
@@ -25,7 +25,7 @@ def get_tasks():
     conn.close()
     return jsonify(tasks)
 
-@app.route('/tasks', methods=['POST'])
+@app.route('/api/tasks', methods=['POST'])
 def add_task():
     task = request.json
     conn = sqlite3.connect('tasks.db')
@@ -37,7 +37,7 @@ def add_task():
     conn.close()
     return jsonify({'id': task_id, **task}), 201
 
-@app.route('/tasks/<int:task_id>', methods=['PUT'])
+@app.route('/api/tasks/<int:task_id>', methods=['PUT'])
 def update_task(task_id):
     task = request.json
     conn = sqlite3.connect('tasks.db')
@@ -48,7 +48,7 @@ def update_task(task_id):
     conn.close()
     return jsonify({'id': task_id, **task})
 
-@app.route('/tasks/<int:task_id>', methods=['DELETE'])
+@app.route('/api/tasks/<int:task_id>', methods=['DELETE'])
 def delete_task(task_id):
     conn = sqlite3.connect('tasks.db')
     c = conn.cursor()
@@ -59,4 +59,4 @@ def delete_task(task_id):
 
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')

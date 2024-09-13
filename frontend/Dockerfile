@@ -1,26 +1,25 @@
 # Build stage
 FROM node:14 as build
 
-# Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
 
-# Copy the rest of the code
 COPY . .
-
-# Build the app
 RUN npm run build
 
 # Production stage
 FROM nginx:alpine
 
-# Copy the build output to replace the default nginx contents.
+# Remove default nginx static assets
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy static assets from builder stage
 COPY --from=build /app/build /usr/share/nginx/html
+
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80
 EXPOSE 80
