@@ -5,6 +5,7 @@ WORKDIR /app
 
 COPY package*.json ./
 RUN npm install
+RUN npm install framer-motion @babel/plugin-proposal-private-property-in-object
 
 COPY . .
 RUN npm run build
