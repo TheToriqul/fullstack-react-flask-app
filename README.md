@@ -19,6 +19,12 @@ This repository contains a full stack application built with React for the front
 - Database: SQLite
 - Containerization: Docker
 
+## System Architecture Diagram
+
+![System Architecture Diagram](./assets/diagram.png)
+
+The image above illustrates the system architecture of our application. It shows the interaction between different components, including the frontend React application, backend Flask server, and the SQLite database. The DevOps section highlights the use of Docker for containerization and Nginx for serving the application.
+
 ## Getting Started
 
 ### Prerequisites
@@ -55,6 +61,8 @@ Full-Stack-React-and-Flask-App/
 │   │   └── index.js
 │   ├── Dockerfile
 │   └── package.json
+├── assets/
+│   └── system-design.png
 ├── docker-compose.yml
 └── README.md
 ```
