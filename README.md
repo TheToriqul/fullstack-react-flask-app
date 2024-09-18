@@ -77,10 +77,6 @@ This repository serves as a playground for me to practice and experiment with fu
 4. Learn about API design and implementation using Flask.
 5. Explore best practices in full stack application architecture.
 
-## Note
-
-This is a personal practice repository. The code here may not be optimized or follow best practices in all cases, as it represents my learning journey.
-
 ## Contributing
 
 Contributions, issues, and feature requests are welcome. Feel free to check [issues page](https://github.com/TheToriqul/Full-Stack-React-and-Flask-App/issues) if you want to contribute.
