@@ -16,6 +16,14 @@ A sophisticated task management system built with React and Flask, featuring rea
 - **RESTful API**: Well-structured Flask backend with SQLite persistence
 - **Animated UI**: Smooth transitions and interactions using Framer Motion
 
+## 🏗️ Project Structure
+<figure >
+  <p align="center">
+      <img src="./assets/diagram.png" alt="project architecture" />
+      <p align="center">Project Architecture</p> 
+  </p>
+</figure>
+
 ## 🚀 Tech Stack
 
 ### Frontend
